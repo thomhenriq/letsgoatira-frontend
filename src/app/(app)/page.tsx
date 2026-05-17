@@ -5,7 +5,6 @@ export default async function Home() {
 
   return (
     <div>
-      home
       <pre>
         {JSON.stringify(events, null ,2)}
       </pre>

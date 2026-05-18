@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Let's Go Atira Logo](public/logo.png)
 
-## Getting Started
+## Let's go Atira — Web
 
-First, run the development server:
+Interface web do projeto **Let's go Atira**, uma plataforma para registrar e guardar os momentos dos eventos do MEJ (Movimento Empresa Júnior) da **Atria Jr.** — a empresa júnior da Faculdade de Tecnologia da Unicamp Limeira.
+
+O **Atira** é o mascote da Atria Jr. e dá nome ao projeto.
+
+🔗 **Link:** [`letsgoatira.vercel.app`](https://letsgoatira.vercel.app)
+
+---
+
+## 🛠️ Tecnologias
+
+- [Next.js 16](https://nextjs.org/) — framework React com App Router e Server Actions
+- [React 19](https://react.dev/) — biblioteca de UI
+- [Tailwind CSS v4](https://tailwindcss.com/) — estilização utilitária
+- [Headless UI](https://headlessui.com/) — componentes de UI acessíveis (dialogs)
+- [TanStack Query](https://tanstack.com/query) — gerenciamento de estado assíncrono
+- [Lucide React](https://lucide.dev/) — ícones
+- [TypeScript](https://www.typescriptlang.org/) — tipagem estática
+
+---
+
+## 📋 Funcionalidades
+
+- Listagem e criação de **eventos** com imagem de capa, data e localização
+- Registro de **presenças** em eventos por e-mail
+- Upload de **fotos** nos eventos
+- Listagem e cadastro de **membros** com foto de perfil e cargo
+- Interface totalmente **responsiva** para mobile e desktop
+
+---
+
+## 🚀 Como rodar localmente
+
+### Pré-requisitos
+
+- Node.js 20+
+- API do backend rodando (veja o [repositório da API](https://github.com/thomhenriq/letsgoatira-backend))
+
+### Instalação
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variáveis de ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Crie um arquivo `.env` na raiz do projeto:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+API_URL=https://letsgoatira-backend.onrender.com
+```
 
-## Learn More
+| Variável  | Descrição              |
+| --------- | ---------------------- |
+| `API_URL` | URL base da API backend |
 
-To learn more about Next.js, take a look at the following resources:
+### Rodando
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# desenvolvimento
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# build de produção
+npm run build
+npm run start
+```
 
-## Deploy on Vercel
+A aplicação sobe por padrão em `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Estrutura do projeto
+
+```
+src/
+├── api/              # Funções de fetch para a API (events, members)
+├── app/
+│   ├── (app)/        # Rotas autenticadas com layout compartilhado
+│   │   ├── page.tsx          # Home — visão geral
+│   │   ├── eventos/          # Listagem e detalhe de eventos
+│   │   └── membros/          # Listagem de membros
+│   ├── api/          # Route handlers Next.js (ex: upload de fotos)
+│   └── globals.css
+├── components/       # Componentes reutilizáveis (cards, dialogs, header…)
+├── lib/              # Utilitários: actions, api client, env
+├── providers/        # Providers React (TanStack Query)
+└── types/            # Tipos TypeScript compartilhados
+```
+
+---
+
+## 🏢 Sobre a Atria Jr.
+
+A [Atria Jr.](https://atriajr.com.br/) é a empresa júnior da Faculdade de Tecnologia (FT) da Unicamp, campus Limeira. Faz parte do MEJ — Movimento Empresa Júnior — e desenvolve projetos de tecnologia com impacto real.

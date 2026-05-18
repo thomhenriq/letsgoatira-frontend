@@ -6,11 +6,11 @@ import { PropsWithChildren } from "react";
 
 export default function AppLayout({ children }: PropsWithChildren) {
     return (
-        <div className="max-w-6xl mx-auto w-full h-screen space-y-8">
+        <div className="max-w-6xl mx-auto w-full min-h-screen px-4 pb-8 space-y-4 md:space-y-8">
             <Header />
-            <div className="w-full grid grid-cols-4 gap-8">
+            <div className="w-full flex flex-col gap-4 md:grid md:grid-cols-4 md:gap-8">
                 <Sidebar />
-                <div className="col-span-3 space-y-4">
+                <div className="md:col-span-3 space-y-4">
                     <div className="flex gap-3 items-center justify-end">
                         <NewEventDialog />
                         <NewMemberDialog />

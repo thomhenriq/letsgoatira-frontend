@@ -78,7 +78,7 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
           />
         </div>
         {event.attendances.length > 0 ? (
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
             {event.attendances.map((attendance) => (
               <MemberCard key={attendance.id} member={attendance.member} />
             ))}
@@ -94,7 +94,7 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
           <h2 className="text-base font-semibold text-zinc-700">Fotos</h2>
         </div>
         {event.photos.length > 0 ? (
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {event.photos.map((photo) => (
               <div key={photo.id} className="relative aspect-square overflow-hidden rounded-md">
                 <Image

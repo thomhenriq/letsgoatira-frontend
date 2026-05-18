@@ -36,7 +36,7 @@ export function NewEventDialog() {
         <div className="fixed inset-0 bg-black/40" aria-hidden="true" />
 
         <div className="fixed inset-0 flex items-center justify-center p-4">
-          <DialogPanel className="w-full max-w-lg rounded-lg bg-white shadow-xl">
+          <DialogPanel className="w-full max-w-lg rounded-lg bg-white shadow-xl max-h-[90vh] overflow-y-auto">
             {/* Header */}
             <div className="flex items-center justify-between border-b border-zinc-200 px-6 py-4">
               <DialogTitle className="text-base font-semibold text-zinc-800">

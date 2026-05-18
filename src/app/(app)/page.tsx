@@ -12,7 +12,7 @@ export default async function Home() {
     <div className="space-y-8">
       <div className="flex flex-col gap-3">
         <h1 className="text-xl font-semibold">Membros</h1>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
           {members.map((member) => (
             <MemberCard key={member.id} member={member} />
           ))}

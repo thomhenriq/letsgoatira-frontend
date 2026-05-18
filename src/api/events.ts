@@ -25,5 +25,12 @@ export async function createEvent(formData: FormData): Promise<Event> {
         method: 'POST',
         body: formData
     })
+}
 
+export async function addEventAttendances(eventId: string, emails: string[]): Promise<void> {
+    return api(`/events/${eventId}/attendances`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ emails }),
+    })
 }

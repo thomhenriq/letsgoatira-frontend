@@ -6,7 +6,7 @@ import { CalendarDays, MapPin, Users } from "lucide-react"
 
 export function EventCard({ event }: { event: Event }) {
   return (
-    <Link href={`/eventos/${event.id}`} className="group flex rounded-md overflow-hidden border border-zinc-200 bg-white">
+    <Link href={`/eventos/${event.id}`} className="h-28 group flex rounded-md overflow-hidden border border-zinc-200 bg-white">
       <div className="relative w-36 shrink-0">
         <Image
           src={event.coverImageUrl}
